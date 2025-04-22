@@ -28,9 +28,9 @@
 
     .arrow {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 40px;
+      top: 10px;
+      right: 10px;
+      font-size: 120px;
       color: white;
       animation: blink 1s infinite;
     }
@@ -42,15 +42,37 @@
     }
 
     .text {
-      font-size: 22px;
-      line-height: 1.6;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .browser-line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .browser-line img {
+      width: 22px;
+      height: 22px;
+      margin-right: 6px;
+    }
+
+    .browser-line span {
+      font-weight: bold;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
   <div class="arrow">↑</div>
   <div class="box">
-    <p class="text">To get the best experience, click the three dots in the top right and select <strong>Open in browser</strong>.</p>
+    <p class="text">Goodies are waiting &gt; ⩊ &lt;</p>
+    <div class="browser-line">
+      <img src="https://raw.githubusercontent.com/matimochi/mati/main/Browser%20logo.png" alt="Browser logo" />
+      <span>Open in browser</span>
+    </div>
   </div>
 
   <script>
