@@ -50,8 +50,8 @@
     .arrow {
       position: absolute;
       top: 5px;
-      right: 5px;
-      font-size: 150px;
+      right: 2px;
+      font-size: 100px;
       color: white;
       transform: rotate(0deg);
       animation: blink 1.2s infinite;
@@ -74,12 +74,16 @@
   </div>
 
   <script>
+    // Pokročilá detekcia WebView
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isWebView = /instagram|fbav|tiktok|webview/i.test(userAgent);
+    const isWebView = (
+      /(instagram|fbav|tiktok|webview)/i.test(userAgent) ||
+      (window.navigator.standalone === false) ||
+      (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+    );
 
     if (!isWebView) {
-      // už sme v normálnom prehliadači – redirectni
-      window.location.replace("https://beacons.ai/mati_meoww");
+      window.location.replace("go.html");
     }
   </script>
 </body>
