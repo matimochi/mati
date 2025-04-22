@@ -1,79 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Open in browser</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-color: #1a1a1a;
-      color: white;
       font-family: sans-serif;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-      margin: 0;
-      padding-top: 40px;
-      text-align: center;
+      overflow: hidden;
+      position: relative;
+      color: white;
     }
 
     .box {
       background: #2a2a2a;
-      padding: 30px 25px;
+      padding: 40px 30px;
       border-radius: 16px;
       max-width: 90%;
-      width: 300px;
-      box-sizing: border-box;
-      margin-top: 40px;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 5px;
-      right: 18px;
-      font-size: 120px;
-      color: white;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0% {opacity: 1;}
-      50% {opacity: 0;}
-      100% {opacity: 1;}
+      width: 320px;
+      text-align: center;
     }
 
     .text {
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 24px;
+      margin-bottom: 18px;
     }
 
     .browser-line {
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-top: 14px;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     .browser-line img {
-      width: 22px;
-      height: 22px;
-      margin-right: 6px;
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
     }
 
-    .browser-line span {
-      font-weight: bold;
-      font-size: 16px;
+    .arrow {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 150px;
+      color: white;
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
 <body>
   <div class="arrow">↑</div>
   <div class="box">
-    <p class="text">Goodies are waiting &gt; ⩊ &lt;</p>
+    <div class="text">Goodies are waiting &gt; ⩊ &lt;</div>
     <div class="browser-line">
-      <img src="https://raw.githubusercontent.com/matimochi/mati/main/Browser%20logo.png" alt="Browser logo" />
+      <img src="https://raw.githubusercontent.com/matimochi/mati/main/Browser%20logo.png" alt="Browser icon" />
       <span>Open in browser</span>
     </div>
   </div>
