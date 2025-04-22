@@ -1,84 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Open in browser</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open in Browser</title>
   <style>
     body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #1a1a1a;
-      font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-      position: relative;
-      color: white;
-    }
-
-    .box {
-      background: #2a2a2a;
-      padding: 40px 30px;
-      border-radius: 16px;
-      max-width: 90%;
-      width: 320px;
-      text-align: center;
-    }
-
-    .text {
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .browser-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .browser-line img {
-      width: 26px;
-      height: 26px;
-      margin-right: 10px;
     }
 
     .arrow {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 150px;
-      color: white;
-      animation: blink 1.2s infinite;
+      top: 50px;
+      right: 20px;
+      font-size: 80px;
+      color: rgba(255, 255, 255, 0.5);
+      transform: rotate(45deg); /* náklon šípky */
+      animation: pulse 2s infinite;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: rotate(45deg) scale(1); }
+      50% { opacity: 1; transform: rotate(45deg) scale(1.2); }
+      100% { opacity: 0.3; transform: rotate(45deg) scale(1); }
+    }
+
+    .box {
+      background-color: #222;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .small-text {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .large-text {
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .large-text img {
+      width: 24px;
+      height: 24px;
     }
   </style>
 </head>
 <body>
   <div class="arrow">↑</div>
   <div class="box">
-    <div class="text">Goodies are waiting &gt; ⩊ &lt;</div>
-    <div class="browser-line">
-      <img src="https://raw.githubusercontent.com/matimochi/mati/main/Browser%20logo.png" alt="Browser icon" />
-      <span>Open in browser</span>
+    <div class="small-text">Goodies are waiting > ⩊ <</div>
+    <div class="large-text">
+      <img src="https://github.com/matimochi/mati/blob/main/Browser%20logo.png?raw=true" alt="browser icon">
+      Open in browser
     </div>
   </div>
-
-  <script>
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isWebView = /instagram|fbav|tiktok|webview/i.test(userAgent);
-
-    if (!isWebView) {
-      window.location.replace("go.html");
-    }
-  </script>
 </body>
 </html>
